@@ -6,7 +6,7 @@
 上网找了好久，没有找到一个称心的局域网文件共享软件。晚上自己搞了这么个东西
 
 ## 使用方法
-* 下载文件[]()
+* 下载文件[FileAnywhere](https://github.com/ExFly/FileAnywhere/releases/download/v0.0.0/FileAnywhere.tar.gz)
 * 确保电脑和手机在同一个局域网中
 * 将要共享的文件复制到_FILE文件夹下
 * 启动服务器，在url的最后输入要共享文件的名字例如：http://localhost:8080/file/main.txt
