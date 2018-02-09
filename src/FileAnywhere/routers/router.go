@@ -7,5 +7,6 @@ import (
 
 func init() {
     beego.Router("/", &controllers.MainController{})
-    beego.Router("/file/:filename([\\w\\.]+)", &controllers.FileQRController{})
+    beego.Router("/file/:filename(.+)", &controllers.FileQRController{})
+    // beego.Router("/file/:filename([\\w\\.]+)", &controllers.FileQRController{})
 }

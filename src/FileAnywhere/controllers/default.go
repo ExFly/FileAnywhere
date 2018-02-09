@@ -4,6 +4,7 @@ import (
 	"net"
 	"github.com/astaxie/beego"
 	"github.com/skip2/go-qrcode"
+	"log"
 )
 
 type MainController struct {
@@ -55,5 +56,18 @@ func (this *FileQRController) Get() {
 		this.Data["file_qr"] = "/"+file_path
 	}
 
+	this.TplName = "file.tpl"
+}
+
+func (this *FileQRController) Post() {
+	f, h, err := this.GetFile("upload")
+	if err != nil {
+		log.Fatal("upload fatal", err)
+	}
+	path := "_FILE/" + h.Filename
+	defer f.Close()
+	this.SaveToFile("upload", path)
+	
+	this.Data["msg_file_upload"] = "upload file success ===>" + h.Filename
 	this.TplName = "file.tpl"
 }
